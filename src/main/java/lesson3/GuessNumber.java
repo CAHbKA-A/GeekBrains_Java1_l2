@@ -12,12 +12,13 @@ public class GuessNumber {
         int oneMore;
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
+        int count = 3;
 
         do {
             int number = random.nextInt(10);
             System.out.println("Угадай число");
 
-            while (true) {
+            while (count >0) {
                 int tryNumber = sc.nextInt();
                 if (tryNumber > number) {
                     System.out.println("Число больше загаданного");
@@ -26,8 +27,14 @@ public class GuessNumber {
                         System.out.println("Число меньше загаданного");
                     } else break;
                 }
+                count --;
+                if (count == 0) {
+                    System.out.println("Не угадал");
+                }
             }
-            System.out.println("Угадал!Повторить игру еще раз? 1 – да / 0 – нет»");
+
+            System.out.println("Повторить игру еще раз? 1 – да / 0 – нет»");
+            System.out.println(count);
             oneMore = sc.nextInt();
             if ((oneMore != 0) && (oneMore != 1)) {
                 System.out.println("Иди, учи цифры!");
