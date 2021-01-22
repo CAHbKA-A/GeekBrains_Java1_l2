@@ -22,7 +22,7 @@ public class GuessWord {
         Random random = new Random();
         boolean geesFlag = false;
         String usersWord;
-        String randomWord = words[random.nextInt(25)];
+        String randomWord = words[random.nextInt(words.length)];
         //System.out.println(randomWord);
         Scanner sc = new Scanner(System.in);
         System.out.println("Угадай слово");
