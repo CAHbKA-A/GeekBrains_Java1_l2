@@ -10,9 +10,11 @@ public class Employee {
     private int age;
 
     public int getAge() {
+
         return age;
     }
-    public Employee(){
+
+    protected Employee(){
         this.nameFio = "Не здали";
         this.position = "Соискатель";
         this.eMail = "нет";
@@ -23,7 +25,7 @@ public class Employee {
     }
 
 
-    public Employee(String nameFio, String position, String eMail, String phoneNumber, double payment, int age) {
+    protected Employee(String nameFio, String position, String eMail, String phoneNumber, double payment, int age) {
         this.nameFio = nameFio;
         this.position = position;
         this.eMail = eMail;
@@ -35,8 +37,19 @@ public class Employee {
 
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "nameFio='" + nameFio + '\'' +
+                ", position='" + position + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", payment=" + payment +
+                ", age=" + age +
+                '}';
+    }
 
-    public void printPersonInfo() {
+/*    public void printInfo() {
 
         System.out.println("ФИО: " + this.nameFio);
         System.out.println("Должность: " + this.position);
@@ -47,6 +60,8 @@ public class Employee {
         System.out.println();
 
     }
+
+ */
 
 }
 
