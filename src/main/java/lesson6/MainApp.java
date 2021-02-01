@@ -16,44 +16,28 @@ public class MainApp {
 
     private static void createAnimals() {
 
-        Dog[] dogsArr = new Dog[2];
-        Cat[] catsArr = new Cat[3];
 
+        Dog dog1 = new Dog("Бобик");
+
+        dog1.run(100);
+        dog1.swim(59);
         System.out.println();
 
-
-        dogsArr[0] = new Dog("Бобик");
-        doing(dogsArr[0], 100, 2);
+        Cat cat1 = new Cat("Барсик");
+        cat1.run(30);
         System.out.println();
 
-        catsArr[0] = new Cat("Барсик");
-        doing(catsArr[0], 5,22);
+        Cat cat2 = new Cat();
+        cat2.run(35);
         System.out.println();
 
-        catsArr[1] = new Cat();
-        doing(catsArr[1], 1,11);
-        System.out.println();
-
-
-
-        // попробовал что будет если применить метод на только что созданный объект без занесения его в массив.  Посчитался, но в  дельнейшем его использовать нельзя будет
-        doing(new Dog("Гуляка"), 11,12);
-        System.out.println();
 
         // попробовал что будет если создать объект без занесения его в массив и тут же применить метода его класса. все работает.
         new Dog("Кусака").swim(121);
 
-        // пришел к выводу, что для этого  домашнего задания можно было массивы и не создавать"!!!!
-
-
+        //еще одна собака
+        new Dog("Тузик").run(11);
     }
 
-    //в метод можем закинуть и собаку и кота .
-    //Это и есть полиморфизм?
-    public static void doing(Animal a, int runDist, int swimDist) {
-        a.run(runDist);
-        a.swim(swimDist);
-
-    }
 
 }

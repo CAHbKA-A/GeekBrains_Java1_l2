@@ -6,7 +6,6 @@ public class Dog extends Animal {
     private static int count;
 
 
-
     public Dog() {
         super();
     }
