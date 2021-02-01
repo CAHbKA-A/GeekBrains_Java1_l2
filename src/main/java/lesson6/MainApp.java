@@ -18,7 +18,6 @@ public class MainApp {
 
 
         Dog dog1 = new Dog("Бобик");
-
         dog1.run(100);
         dog1.swim(59);
         System.out.println();
@@ -34,10 +33,22 @@ public class MainApp {
 
         // попробовал что будет если создать объект без занесения его в массив и тут же применить метода его класса. все работает.
         new Dog("Кусака").swim(121);
-
+        System.out.println();
         //еще одна собака
         new Dog("Тузик").run(11);
+        System.out.println();
+
+
+        Cat cat3 = new Cat("Мяука");
+        doing(cat3, 23);
+
+        Dog dog4 = new Dog("Забивака");
+        doing(dog4, 66);
+
     }
 
-
+    //Это полиморфный метод?
+    public static void doing(Animal a, int distance) {
+        a.run(distance);
+    }
 }
