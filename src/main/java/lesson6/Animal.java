@@ -18,14 +18,13 @@ public abstract class Animal {
     }
 
 
-
     public void run(int distance) {
         System.out.println("Животное " + name + " пробежало " + distance + " км.");
 
     }
 
 
-    public void swim  (int distance){}
+    // public void swim  (int distance){}
 
 }
 
