@@ -1,8 +1,11 @@
 package Lesson7.model;
 
 public class Cat {
+    public static void main(String[] args) {
 
-    private boolean isSatiety ; // сытость
+    }
+    Plate plate;
+    private boolean isSatiety; // сытость
     private int stomachSize; // размер желудка
 
     public Cat() {// дефолтный кот
