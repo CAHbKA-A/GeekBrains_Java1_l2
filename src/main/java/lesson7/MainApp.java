@@ -1,7 +1,7 @@
-package Lesson7;
+package lesson7;
 
-import Lesson7.model.Cat;
-import Lesson7.model.Plate;
+import lesson7.model.Cat;
+import lesson7.model.Plate;
 
 import java.util.Random;
 
