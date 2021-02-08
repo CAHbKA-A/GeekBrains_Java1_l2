@@ -14,6 +14,9 @@ public class MainApp {
 
     public static void main(String[] args) {
 
+byte a=127;
+a++;
+        System.out.println(a);
 
         createCats();
         //printCat();
@@ -60,6 +63,7 @@ public class MainApp {
 
     private static void createCats() {
         Random random = new Random();
+
         cats[0] = new Cat(50); //один Жирный кот
         minStomachSize = cats[0].getStomachSize();
         for (int i = 1; i < totalCats; i++) {
