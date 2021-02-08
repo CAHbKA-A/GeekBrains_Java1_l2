@@ -1,4 +1,4 @@
-package Lesson7.model;
+package lesson7.model;
 
 public class Cat {
     public static void main(String[] args) {
