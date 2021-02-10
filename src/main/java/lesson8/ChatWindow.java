@@ -6,8 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
 
 public class ChatWindow extends JFrame {
 
@@ -64,7 +62,7 @@ public class ChatWindow extends JFrame {
             public void keyTyped(KeyEvent e) {
 
             }
-
+            // событие на нажатие кнопки
             @Override
             public void keyPressed(KeyEvent e) {
                 //TODO вынести в функцию
@@ -79,7 +77,7 @@ public class ChatWindow extends JFrame {
                 }
             }
 
-            // событие на нажатие кнопки
+
             @Override
             public void keyReleased(KeyEvent e) {
 
@@ -95,7 +93,7 @@ public class ChatWindow extends JFrame {
                 StringBuilder sb = new StringBuilder();
                 if (!sayFieldText.getText().equals("")) {
                     sb.append(chat.getText())
-                            .append(" \n " + nameFieldText.getText() + ":")
+                            .append(" \n ").append(nameFieldText.getText()).append(":")
                             .append(sayFieldText.getText());
                     sayFieldText.setText("");
                     chat.setText(sb.toString());
