@@ -2,63 +2,62 @@ package lesson8;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
 
-public class ChatWindow extends JFrame {
+public class ChatWindow2 extends JFrame {
 
     public static void main(String[] args) {
-        ChatWindow frame = new ChatWindow();
+        ChatWindow2 frame = new ChatWindow2();
         frame.setVisible(true);
     }
 
-    public ChatWindow() {
+    public ChatWindow2() {
 
         setTitle("Чат");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(200, 200, 400, 600);
         setAlwaysOnTop(true);
 
-
         JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
-        JTextArea chat = new JTextArea();
-        chat.setText("Say Hello");
-        chat.setToolTipText("Окно чата");
-        panel.add(chat, BorderLayout.CENTER);
-        chat.setEditable(false);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+       // panel.setLayout(new BorderLayout(BoxLayout));
 
-        JScrollPane scrollPane = new JScrollPane(chat, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setBounds(10, 57, 946, 406);
-        panel.add(scrollPane);
 
 
         JTextField nameFieldText = new JTextField();
         nameFieldText.setText("Enter your name");
-        panel.add(nameFieldText, BorderLayout.NORTH);
+      //  nameFieldText.setAlignmentX(JComponent.BOTTOM_ALIGNMENT);
+        panel.add(nameFieldText);
 
-        //вторая падель для поля и кнопки
-        JPanel panel2 = new JPanel();
-        panel2.setLayout(new BorderLayout());
+        JTextArea chat = new JTextArea();
+        chat.setText("Say Hello");
+        chat.setToolTipText("Окно чата");
+      //  chat.setAlignmentX(JComponent.TOP_ALIGNMENT);
+        chat.setEditable(false);
+
+        JScrollPane scrollPane = new JScrollPane(chat, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+         scrollPane.setBounds(10, 57, 946, 406);
+        panel.add(scrollPane);
+
 
         JTextField sayFieldText = new JTextField();
+      //  sayFieldText.setAlignmentX(JComponent.RIGHT_ALIGNMENT);
         sayFieldText.setText("text");
-        panel2.add(sayFieldText, BorderLayout.CENTER);
-
+        panel.add(sayFieldText);
+        sayFieldText.setMaximumSize(new Dimension(100, 600));
 
         JButton button1 = new JButton("send");
-        panel2.add(button1, BorderLayout.EAST);
-        panel.add(panel2, BorderLayout.SOUTH);
+      //  button1.setAlignmentX(JComponent.RIGHT_ALIGNMENT);
+        button1.setMaximumSize(new Dimension(100, 400));
+        JButton button = new JButton("jghgj");
+       // button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panel.add(button);
+
+        panel.add(button1);
 
 
         //TODO TimeDateStamp
-
-        // событие на нажатие enter
-
         sayFieldText.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -67,7 +66,6 @@ public class ChatWindow extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                //TODO вынести в функцию
                 StringBuilder sb = new StringBuilder();
                 if ((e.getKeyCode() == 10) && (!sayFieldText.getText().equals(""))) {
                     sb.append(chat.getText())
@@ -79,7 +77,6 @@ public class ChatWindow extends JFrame {
                 }
             }
 
-            // событие на нажатие кнопки
             @Override
             public void keyReleased(KeyEvent e) {
 
@@ -89,20 +86,9 @@ public class ChatWindow extends JFrame {
 
 
 
-        button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                //TODO вынести в функцию
-                StringBuilder sb = new StringBuilder();
-                if (!sayFieldText.getText().equals("")) {
-                    sb.append(chat.getText())
-                            .append(" \n " + nameFieldText.getText() + ":")
-                            .append(sayFieldText.getText());
-                    sayFieldText.setText("");
-                    chat.setText(sb.toString());
-                    sayFieldText.setText("");
-                }
-            }
-        });
+
+
+
 
 
         add(panel);
